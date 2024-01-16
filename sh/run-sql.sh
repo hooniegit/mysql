@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # run 'chmod +x run-sql.sh'
-# ./run-sql.sh <username> <database> </path/to/sql/file>/<filename>.sql
+# ./run-sql.sh <host> <username> <database> </path/to/sql/file>/<filename>.sql
 
-username=$1
-database=$2
-sql_file=$3
+host=$1
+username=$2
+database=$3
+sql_file=$4
 
-mysql -u $username -p $database < $sql_file
+mysql -h $host -u $username -p $database < $sql_file
